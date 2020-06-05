@@ -1,0 +1,74 @@
+¬í sr 
+sample.PersonÊ0EüŸí L eAt ,Ljavafx/beans/property/SimpleStringProperty;L fNq ~ L lNq ~ xp{sr  java.io.NotSerializableException(Vx ç†5  xr java.io.ObjectStreamExceptiondÃäk9ûß  xr java.io.IOExceptionl€sde%ð«  xr java.lang.ExceptionÐý>;Ä  xr java.lang.ThrowableÕÆ5'9w¸Ë L causet Ljava/lang/Throwable;L 
+detailMessaget Ljava/lang/String;[ 
+stackTracet [Ljava/lang/StackTraceElement;L suppressedExceptionst Ljava/util/List;xpq ~ 	t *javafx.beans.property.SimpleStringPropertyur [Ljava.lang.StackTraceElement;F*<<ý"9  xp   <sr java.lang.StackTraceElementa	Åš&6Ý… B formatI 
+lineNumberL classLoaderNameq ~ L declaringClassq ~ L fileNameq ~ L 
+methodNameq ~ L 
+moduleNameq ~ L 
+moduleVersionq ~ xp  ©pt java.io.ObjectOutputStreamt ObjectOutputStream.javat writeObject0t 	java.baset 14.0.1sq ~ 
+  +pq ~ q ~ t defaultWriteFieldsq ~ q ~ sq ~ 
+   pq ~ q ~ t writeSerialDataq ~ q ~ sq ~ 
+  ¤pq ~ q ~ t writeOrdinaryObjectq ~ q ~ sq ~ 
+  £pq ~ q ~ q ~ q ~ q ~ sq ~ 
+  apq ~ q ~ t writeObjectq ~ q ~ sq ~ 
+   xt appt sample.Controllert Controller.javat doSavet DynTableWithBindingBipsq ~ 
+ÿÿÿþpt -jdk.internal.reflect.NativeMethodAccessorImplt NativeMethodAccessorImpl.javat invoke0q ~ q ~ sq ~ 
+   >pq ~ $q ~ %t invokeq ~ q ~ sq ~ 
+   +pt 1jdk.internal.reflect.DelegatingMethodAccessorImplt !DelegatingMethodAccessorImpl.javaq ~ (q ~ q ~ sq ~ 
+  4pt java.lang.reflect.Methodt Method.javaq ~ (q ~ q ~ sq ~ 
+    Lpt !com.sun.javafx.reflect.Trampolinet MethodUtil.javaq ~ (ppsq ~ 
+ ÿÿÿÿpt -jdk.internal.reflect.GeneratedMethodAccessor2pq ~ (ppsq ~ 
+   +pq ~ *q ~ +q ~ (q ~ q ~ sq ~ 
+  4pq ~ -q ~ .q ~ (q ~ q ~ sq ~ 
+  q ~ t !com.sun.javafx.reflect.MethodUtilq ~ 1q ~ (t javafx.basepsq ~ 
+   Sq ~ t  com.sun.javafx.fxml.MethodHelpert MethodHelper.javaq ~ (t javafx.fxmlpsq ~ 
+  öq ~ t $javafx.fxml.FXMLLoader$MethodHandlert FXMLLoader.javaq ~ (q ~ <psq ~ 
+  †q ~ t 3javafx.fxml.FXMLLoader$ControllerMethodEventHandlerq ~ ?t handleq ~ <psq ~ 
+   Vq ~ t *com.sun.javafx.event.CompositeEventHandlert CompositeEventHandler.javat dispatchBubblingEventq ~ 8psq ~ 
+   êq ~ t (com.sun.javafx.event.EventHandlerManagert EventHandlerManager.javaq ~ Fq ~ 8psq ~ 
+   ¿q ~ q ~ Hq ~ Iq ~ Fq ~ 8psq ~ 
+   :q ~ t )com.sun.javafx.event.BasicEventDispatchert BasicEventDispatcher.javat 
+dispatchEventq ~ 8psq ~ 
+   rq ~ t +com.sun.javafx.event.EventDispatchChainImplt EventDispatchChainImpl.javaq ~ Nq ~ 8psq ~ 
+   Jq ~ t com.sun.javafx.event.EventUtilt EventUtil.javat 
+fireEventImplq ~ 8psq ~ 
+   1q ~ q ~ Sq ~ Tt 	fireEventq ~ 8psq ~ 
+   Æq ~ t javafx.event.Eventt 
+Event.javaq ~ Wq ~ 8psq ~ 
+  Ëq ~ t javafx.scene.control.MenuItemt 
+MenuItem.javat firet javafx.controlspsq ~ 
+  dq ~ t Acom.sun.javafx.scene.control.ContextMenuContent$MenuItemContainert ContextMenuContent.javat doSelectq ~ _psq ~ 
+  5q ~ q ~ aq ~ bt lambda$createChildren$12q ~ _psq ~ 
+   ÷q ~ t Ccom.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecordq ~ Et handleBubblingEventq ~ 8psq ~ 
+   Pq ~ q ~ Dq ~ Eq ~ Fq ~ 8psq ~ 
+   êq ~ q ~ Hq ~ Iq ~ Fq ~ 8psq ~ 
+   ¿q ~ q ~ Hq ~ Iq ~ Fq ~ 8psq ~ 
+   ;q ~ t -com.sun.javafx.event.CompositeEventDispatchert CompositeEventDispatcher.javaq ~ Fq ~ 8psq ~ 
+   :q ~ q ~ Lq ~ Mq ~ Nq ~ 8psq ~ 
+   rq ~ q ~ Pq ~ Qq ~ Nq ~ 8psq ~ 
+   8q ~ q ~ Lq ~ Mq ~ Nq ~ 8psq ~ 
+   rq ~ q ~ Pq ~ Qq ~ Nq ~ 8psq ~ 
+   8q ~ q ~ Lq ~ Mq ~ Nq ~ 8psq ~ 
+   rq ~ q ~ Pq ~ Qq ~ Nq ~ 8psq ~ 
+   8q ~ q ~ Lq ~ Mq ~ Nq ~ 8psq ~ 
+   rq ~ q ~ Pq ~ Qq ~ Nq ~ 8psq ~ 
+   Jq ~ q ~ Sq ~ Tq ~ Uq ~ 8psq ~ 
+   6q ~ q ~ Sq ~ Tq ~ Wq ~ 8psq ~ 
+   Æq ~ q ~ Yq ~ Zq ~ Wq ~ 8psq ~ 
+  2q ~ t javafx.scene.Scene$MouseHandlert 
+Scene.javat processt javafx.graphicspsq ~ 
+  ]q ~ t javafx.scene.Sceneq ~ |t processMouseEventq ~ ~psq ~ 
+  
+:q ~ t $javafx.scene.Scene$ScenePeerListenerq ~ |t 
+mouseEventq ~ ~psq ~ 
+  ™q ~ t Fcom.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotificationt GlassViewEventHandler.javat runq ~ ~psq ~ 
+  +q ~ q ~ †q ~ ‡q ~ ˆq ~ ~psq ~ 
+  ‡pt java.security.AccessControllert AccessController.javat doPrivilegedq ~ q ~ sq ~ 
+  ¿q ~ t /com.sun.javafx.tk.quantum.GlassViewEventHandlerq ~ ‡t lambda$handleMouseEvent$2q ~ ~psq ~ 
+  œq ~ t (com.sun.javafx.tk.quantum.QuantumToolkitt QuantumToolkit.javat runWithoutRenderLockq ~ ~psq ~ 
+  ¾q ~ q ~ q ~ ‡t handleMouseEventq ~ ~psq ~ 
+  ,q ~ t com.sun.glass.ui.Viewt 	View.javaq ~ –q ~ ~psq ~ 
+  ®q ~ q ~ ˜q ~ ™t notifyMouseq ~ ~psq ~ 
+ÿÿÿþq ~ t #com.sun.glass.ui.win.WinApplicationt WinApplication.javat _runLoopq ~ ~psq ~ 
+   ®q ~ q ~ q ~ žt lambda$runLoop$3q ~ ~psq ~ 
+  @pt java.lang.Threadt Thread.javaq ~ ˆq ~ q ~ sr java.util.Collections$EmptyListz¸´<§žÞ  xpx
