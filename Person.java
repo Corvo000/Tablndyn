@@ -64,9 +64,12 @@ public class Person implements Serializable
     }
     public void writeObject(ObjectOutputStream ouP) throws ClassNotFoundException, IOException
     {
-        ouP.writeUTF(fN.getValue());
-        ouP.writeUTF(lN.getValue());
-        ouP.writeUTF(eA.getValue());
+        ouP.writeUTF(fN.getValueSafe());
+        ouP.writeUTF(lN.getValueSafe());
+        ouP.writeUTF(eA.getValueSafe());
     }
-
+    public Person copy(Person p)
+    {
+        return new Person(p.getfN(),p.getlN(),p.geteA());
+    }
 }
