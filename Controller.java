@@ -6,29 +6,32 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable
 {
     Person selectedPerson = new Person();
-    @FXML TableView<Person> tV = new TableView();
-    @FXML TextField tf1 = new TextField();
-    @FXML TextField tf2 = new TextField();
-    @FXML TextField tf3 = new TextField();
-    @FXML Button btnDelete = new Button();
-    @FXML Button btnNew = new Button();
-    @FXML Label lb = new Label();
-    @FXML Button addBtn = new Button();
-    @FXML MenuItem menuOpen = new MenuItem();
-    @FXML MenuItem menuSave = new MenuItem();
+    @FXML TableView<Person> tV;
+    @FXML TextField tf1;
+    @FXML TextField tf2;
+    @FXML TextField tf3;
+    @FXML Button btnDelete;
+    @FXML Button btnNew;
+    @FXML Label lb;
+    @FXML Button addBtn;
+    @FXML MenuItem menuOpen;
+    @FXML MenuItem menuSave;
     BooleanProperty selected = new SimpleBooleanProperty();
     BooleanProperty containText1 = new SimpleBooleanProperty(false);
     BooleanProperty containText2 = new SimpleBooleanProperty(false);
@@ -99,7 +102,20 @@ public class Controller implements Initializable
         tf1.styleProperty().bind(Bindings.when(containText1.and(tf1.textProperty().isEmpty())).then("-fx-border-color:red").otherwise(""));
         tf2.styleProperty().bind(Bindings.when(containText2.and(tf2.textProperty().isEmpty())).then("-fx-border-color:red").otherwise(""));
         tf3.styleProperty().bind(Bindings.when(containText3.and(tf3.textProperty().isEmpty())).then("-fx-border-color:red").otherwise(""));
-
+        MyDialog mD = new MyDialog(getStage());
+        tV.setOnMouseClicked((e)->{
+            if(e.getClickCount() >= 2 && tV.getSelectionModel().getSelectedIndex() != -1)
+            {
+                mD.sendTabelView(tV);
+                Optional<ButtonType>opt = mD.showAndWait();
+                if(opt.get() == ButtonType.APPLY)
+                {
+                    int index = tV.getSelectionModel().getSelectedIndex();
+                    tV.getItems().set(tV.getSelectionModel().getSelectedIndex(),mD.getSelectedPerson());
+                    tV.getSelectionModel().select(index);
+                }
+            }
+        });
     }
 
     public void doExit(ActionEvent actionEvent)
@@ -113,12 +129,10 @@ public class Controller implements Initializable
         File f = fC.showSaveDialog(getStage());
         if(f != null)
         {
-            try(ObjectOutputStream ouP = new ObjectOutputStream(new FileOutputStream(f));)
+            try(ObjectOutputStream ouP = new ObjectOutputStream(new FileOutputStream(f)))
             {
-                for( Person p : tV.getItems())
-                {
+                for(Person p : tV.getItems())
                     ouP.writeObject(p);
-                }
             }
             catch(EOFException e1) { }
             catch (IOException e2) { }
@@ -137,7 +151,10 @@ public class Controller implements Initializable
                 while(true)
                     tV.getItems().add((Person) inP.readObject());
             }
-            catch(EOFException e1) { }
+            catch(EOFException e1)
+            {
+                //Dann dialog true
+            }
             catch (IOException e2) { }
             catch (ClassNotFoundException e) { }
         }
