@@ -1,0 +1,74 @@
+package sample;
+
+import javafx.beans.property.SimpleStringProperty;
+import javafx.scene.Group;
+import javafx.scene.control.*;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class MyDialog extends Dialog<ButtonType>
+{
+    private BorderPane root;
+    private Label l1 = new Label("First Name");
+    private Label l2 = new Label("Last Name");
+    private Label l3 = new Label("E-Mail:");
+    private HBox hb1;
+    private HBox hb2;
+    private HBox hb3;
+    private TextField tf1;
+    private TextField tf2;
+    private TextField tf3;
+    ButtonType apply;
+    ButtonType cancel;
+    public MyDialog(Stage primaryStage)
+    {
+        super();
+        //initOwner(primaryStage);
+        root = new BorderPane();
+        tf1 = new TextField();
+        tf2 = new TextField();
+        tf3 = new TextField();
+        hb1 = new HBox();
+        hb1.getChildren().addAll(l1,tf1);
+        hb2 = new HBox();
+        hb2.getChildren().addAll(l2,tf2);
+        hb3 = new HBox();
+        hb3.getChildren().addAll(l3,tf3);
+
+        VBox center = new VBox();
+        center.getChildren().addAll(hb1,hb2,hb3);
+        root.setCenter(center);
+
+        apply = ButtonType.APPLY;
+        cancel = ButtonType.CANCEL;
+
+        this.getDialogPane().getButtonTypes().addAll(apply);
+        this.getDialogPane().getButtonTypes().addAll(cancel);
+
+
+        getDialogPane().setContent(root);
+    }
+    public Person getSelectedPerson()
+    {
+        return new Person(tf1.getText(),tf2.getText(),tf3.getText());
+    }
+    public void sendTabelView(TableView<Person> tV)
+    {
+        Person p = new Person();
+        p.setfN(tV.getSelectionModel().getSelectedItem().getfN());
+        p.setlN(tV.getSelectionModel().getSelectedItem().getlN());
+        p.seteA(tV.getSelectionModel().getSelectedItem().geteA());
+
+        tf1.textProperty().bindBidirectional(p.fNProperty());
+        tf2.textProperty().bindBidirectional(p.lNProperty());
+        tf3.textProperty().bindBidirectional(p.eAProperty());
+    }
+    public void reset()
+    {
+        tf1 = new TextField();
+        tf2 = new TextField();
+        tf3 = new TextField();
+    }
+}
